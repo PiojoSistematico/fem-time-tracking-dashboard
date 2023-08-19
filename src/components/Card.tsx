@@ -22,13 +22,32 @@ type CardProps = {
 
 const Card: React.FunctionComponent<CardProps> = ({ elem, route, period }) => {
   return (
-    <section className="card">
-      <img src={"./images/icon-" + route + ".svg"} alt="" />
-      <div>
-        <h1>{elem.title}</h1>
-        <img src={"./images/icon-ellipsis.svg"} alt="" />
-        <span>{elem.timeframes[`${period}`].current}</span>
-        <span> Last Week {elem.timeframes[`${period}`].previous} hrs</span>
+    <section className={`card ${route}`}>
+      <img
+        src={"./images/icon-" + route + ".svg"}
+        alt=""
+        className="card-img"
+      />
+      <div className="card-info">
+        <div className="justify-between">
+          <h2>{elem.title}</h2>
+          <a href="#">
+            <img
+              src={"./images/icon-ellipsis.svg"}
+              alt=""
+              className="ellipsis"
+            />
+          </a>
+        </div>
+        <div className="justify-between">
+          <span className="hours">
+            {elem.timeframes[`${period}`].current}hrs
+          </span>
+          <span className="last-week">
+            {" "}
+            Last Week {elem.timeframes[`${period}`].previous} hrs
+          </span>
+        </div>
       </div>
     </section>
   );

@@ -9,12 +9,18 @@ function App() {
   return (
     <main>
       <section className="profile-section">
-        <img src={"./images/image-jeremy.png"} alt="user-avatar" />
         <div className="user">
-          <span>Report for</span>
-          <h1>Jeremy Robson</h1>
+          <img
+            src={"./images/image-jeremy.png"}
+            alt="user-avatar"
+            className="avatar"
+          />
+          <div>
+            <span>Report for</span>
+            <h1>Jeremy Robson</h1>
+          </div>
         </div>
-        <div>
+        <div className="period">
           <button name="daily" onClick={() => setPeriod("daily")}>
             Daily
           </button>
