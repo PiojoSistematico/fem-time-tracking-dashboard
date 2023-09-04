@@ -130,7 +130,7 @@ main {
 }
 
 .user {
-  background-color: var(--clr-neutral-desaturated-blue);
+  background-color: var(--clr-primary-blue);
   display: flex;
   align-items: center;
   border-radius: 0 0 1rem 1rem;
@@ -192,13 +192,17 @@ button:focus-visible {
 .card-info {
   background-color: var(--clr-neutral-dark-blue);
   height: 110px;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
   width: 100%;
   z-index: 1;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   justify-content: space-around;
+}
+
+.card-info:hover {
+  background-color: hsl(235, 46%, 30%);
 }
 
 h1,
@@ -249,18 +253,63 @@ h2 {
 /* Media queries */
 @media (min-width: 50em) {
   main {
-    display: grid;
-    grid-template-columns: 25% 75%;
-    width: 1200px;
-    height: 600px;
-    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
   }
   .card-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: 50rem;
+    height: 33rem;
   }
   .card {
-    width: 300px;
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .profile-section {
+    width: 16rem;
+    height: 33rem;
+  }
+  .card-info {
+    height: 12rem;
+  }
+  .profile-section {
+  }
+
+  .user {
+    flex-direction: column;
+    height: 65%;
+    align-items: start;
+    padding: 2rem;
+  }
+
+  .avatar {
+    border-radius: 100rem;
+    border: 0.2rem solid white;
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .period {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    text-align: left;
+    padding: 0 10%;
+  }
+  button {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: var(--font-size-900);
   }
 }
