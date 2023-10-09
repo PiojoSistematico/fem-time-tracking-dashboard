@@ -2,22 +2,14 @@ type CardProps = {
   elem: {
     title: string;
     timeframes: {
-      daily: {
-        current: number;
-        previous: number;
-      };
-      weekly: {
-        current: number;
-        previous: number;
-      };
-      monthly: {
+      [key: string]: {
         current: number;
         previous: number;
       };
     };
   };
   route: string;
-  period: string;
+  period: "daily" | "weekly" | "yearly";
 };
 
 const Card: React.FunctionComponent<CardProps> = ({ elem, route, period }) => {
@@ -40,12 +32,9 @@ const Card: React.FunctionComponent<CardProps> = ({ elem, route, period }) => {
           </a>
         </div>
         <div className="justify-between">
-          <span className="hours">
-            {elem.timeframes[`${period}`].current}hrs
-          </span>
+          <span className="hours">{elem.timeframes[period].current}hrs</span>
           <span className="last-week">
-            {" "}
-            Last Week {elem.timeframes[`${period}`].previous} hrs
+            Last Week {elem.timeframes[period].previous} hrs
           </span>
         </div>
       </div>

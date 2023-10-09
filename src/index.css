@@ -127,6 +127,8 @@ main {
   width: 350px;
   border-radius: 1rem;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .user {
@@ -253,11 +255,78 @@ h2 {
 /* Media queries */
 @media (min-width: 50em) {
   main {
+    gap: var(--font-size-400);
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
+    justify-content: center;
+  }
+  .card-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    width: 50rem;
+    height: 33rem;
+  }
+  .card {
+    width: 16rem;
+    height: 16rem;
+  }
+
+  .profile-section {
+    width: 50rem;
+    height: 16rem;
+    flex-direction: row;
+  }
+  .card-info {
+    height: 12rem;
+  }
+
+  .user {
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    align-items: start;
+    padding: 2rem;
+    border-radius: 0 1rem 1rem 1rem;
+  }
+
+  .avatar {
+    border-radius: 100rem;
+    border: 0.2rem solid white;
+    height: 5rem;
+    width: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .period {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+    text-align: left;
+    padding: 0 10%;
+  }
+  button {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: var(--font-size-900);
+  }
+}
+
+@media (min-width: 80em) {
+  main {
     display: flex;
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
   }
   .card-section {
     display: grid;
@@ -275,18 +344,18 @@ h2 {
   .profile-section {
     width: 16rem;
     height: 33rem;
+    flex-direction: column;
   }
   .card-info {
     height: 12rem;
   }
-  .profile-section {
-  }
 
   .user {
     flex-direction: column;
-    height: 65%;
     align-items: start;
     padding: 2rem;
+    height: 65%;
+    width: 100%;
   }
 
   .avatar {
