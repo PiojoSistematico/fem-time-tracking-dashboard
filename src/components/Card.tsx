@@ -9,7 +9,7 @@ type CardProps = {
     };
   };
   route: string;
-  period: "daily" | "weekly" | "yearly";
+  period: string;
 };
 
 const Card: React.FunctionComponent<CardProps> = ({ elem, route, period }) => {
